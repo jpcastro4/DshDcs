@@ -1,6 +1,7 @@
 const express = require('express')
 const auth = require('./auth')
 const authAccount = require('./authAccount')
+
 module.exports = (server)=>{
 
     //PROTEGIDAS
@@ -9,27 +10,27 @@ module.exports = (server)=>{
 
     protected.use(auth)
 
-    const usersService = require('../api/account/accountService')
-    protected.get('/user', usersService.allUsers)
-    protected.post('/user/:id', usersService.editUser)
+    //const usersService = require('../api/account/accountService')
+    //protected.get('/user', usersService.allUsers)
+    //protected.post('/user/:id', usersService.editUser)
 
-    const boxService = require('../api/box/boxService')
-    boxService.register(protected, '/box')
+    // const boxService = require('../api/box/boxService')
+    // boxService.register(protected, '/box')
 
-    const boxMemberService = require('../api/box/boxMemberService')
-    boxMemberService.register(protected, '/box/member')
+    // const boxMemberService = require('../api/box/boxMemberService')
+    // boxMemberService.register(protected, '/box/member')
 
-    const boxStatusService = require('../api/box/boxStatusService')
-    boxStatusService.register(protected, '/box/status')
+    // const boxStatusService = require('../api/box/boxStatusService')
+    // boxStatusService.register(protected, '/box/status')
 
-    const objectService = require('../api/object/objectService')
-    objectService.register(protected, '/object')
+    // const objectService = require('../api/object/objectService')
+    // objectService.register(protected, '/object')
 
-    const orderService = require('../api/order/orderService')
-    orderService.register(protected, '/order')
+    // const orderService = require('../api/order/orderService')
+    // orderService.register(protected, '/order')
 
-    const paymentService = require('../api/payment/paymentService')
-    paymentService.register(protected, '/payment')
+    // const paymentService = require('../api/payment/paymentService')
+    // paymentService.register(protected, '/payment')
 
     
     //API ROUTERS
